@@ -1,0 +1,114 @@
+/* Resetando margens e preenchimentos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo variáveis de cores */
+:root {
+    --bg-color: #1a1a1a; /* Cor de fundo escura */
+    --text-color: #ffffff; /* Cor do texto principal */
+    --accent-color: #00ffcc; /* Cor de destaque (verde-água neon) */
+}
+
+/* Estilos gerais do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 0 20px; /* Adiciona 20px de padding nas laterais */
+}
+
+/* Estilos do cabeçalho */
+header {
+    padding: 1rem 0; /* Remove o padding lateral do header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+/* Estilos do logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre a imagem e o texto */
+}
+
+.logo img {
+    width: 10rem; /* Ajuste este valor conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+
+nav {
+    margin-left: auto; /* Move a navegação para a direita */
+    margin-right: 20px; /* Adiciona espaço entre a navegação e o botão */
+}
+
+/* Estilos da navegação */
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px; /* Adiciona espaço entre os itens do menu */
+}
+
+nav ul li {
+    margin-left: 0; /* Remove a margem esquerda individual */
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px; /* Espaço para o underline */
+    transition: color 0.3s ease;
+}
+
+/* Criando o underline com pseudo-elemento ::after */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+/* Efeito hover */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Estilo para o link ativo */
+nav ul li a.active {
+    color: var(--accent-color);
+}
+
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Estilo do botão de contato */
+.contact-btn {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    white-space: nowrap;
+    background-color: #00ccaa; /* Cor ligeiramente diferente no hover */
+}
